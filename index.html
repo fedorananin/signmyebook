@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>SignMyEbook — Add a Signature Page to Your EPUB or FB2 | Free, In-Browser</title>
+  <meta name="description" content="Add a signature page to any EPUB or FB2: write a dedication, draw your signature, download the signed file. Runs in your browser, nothing is uploaded. Free.">
+  <meta name="keywords" content="sign ebook, autograph ebook, epub signature, fb2 signature, personalize ebook, ebook dedication, signed ebook, free epub editor">
+  <meta name="author" content="Fëdor Ananin">
+  <link rel="canonical" href="https://signmyebook.com/">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#fcfcfa">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://signmyebook.com/">
+  <meta property="og:title" content="SignMyEbook — Add a signature page to your ebook">
+  <meta property="og:description" content="Write a dedication, draw your signature, download the signed EPUB or FB2. Runs in your browser, nothing is uploaded. Free.">
+  <meta property="og:image" content="https://signmyebook.com/og.jpg">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Sign an ebook like you'd sign a paperback. An example signature page with a short dedication.">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:site_name" content="SignMyEbook">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="SignMyEbook — Add a signature page to your ebook">
+  <meta name="twitter:description" content="Write a dedication, draw your signature, download the signed EPUB or FB2. Runs in your browser. Free.">
+  <meta name="twitter:image" content="https://signmyebook.com/og.jpg">
+  <meta name="twitter:image:alt" content="Sign an ebook like you'd sign a paperback. An example signature page with a short dedication.">
+
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" type="image/svg+xml" href="icon.svg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,300..700;1,7..72,300..700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css?v=9">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "SignMyEbook",
+    "alternateName": "SignMyEbook.com",
+    "description": "A free, in-browser tool that adds a signature page to EPUB and FB2 ebooks. Write a dedication, draw your signature, and download the signed file. Nothing is uploaded.",
+    "url": "https://signmyebook.com/",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "Any modern browser",
+    "browserRequirements": "Requires JavaScript",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "creator": {
+      "@type": "Person",
+      "name": "Fëdor Ananin",
+      "sameAs": [
+        "https://www.linkedin.com/in/fedorananin/",
+        "https://github.com/fedorananin"
+      ]
+    },
+    "featureList": [
+      "Add a signature page to EPUB files",
+      "Add a signature page to FB2 files",
+      "Draw your signature with mouse, touch, or stylus",
+      "Write a personal dedication",
+      "Works offline",
+      "No upload, no account"
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Is my book uploaded anywhere?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. The site is a set of static files. Your browser opens the book, adds the page and saves the new copy, all on your device. The site counts visits with Umami, a cookie-free analytics tool. It records events like \"a book was signed\" along with the file format, never the file or what you wrote. The source code is public on GitHub if you'd like to check."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Will the signed file open in Kindle, Apple Books and other readers?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. The result is a regular EPUB or FB2 with one extra page near the front. Apple Books, Calibre, KOReader, Moon+ Reader, FBReader and most other readers open it as usual. For Kindle, send the EPUB with Send to Kindle, or convert it to AZW3 in Calibre."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does it work with DRM-protected books?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. It can only edit EPUB and FB2 files without copy protection. Most books bought from Kindle, Kobo or Barnes & Noble have DRM and won't open here, and that's intentional."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I sign a book that was already signed?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. If the book already has a SignMyEbook page, the new signature replaces it. Your original file is never changed; every download is a new copy."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does it cost anything?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. There is no paid plan, no account and no watermark. Sign as many books as you like."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I use it offline?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Install it from your browser (\"Add to Home Screen\" or the install icon in the address bar) and it will work without an internet connection."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is there a file size limit?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No fixed limit. Everything happens in your browser, so the only limit is your device's memory. Very large books can be slow on older phones."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Which languages can I write in?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Any language your keyboard supports, including Russian, Chinese, Arabic and Hebrew, and mixed scripts. The text is stored exactly as you typed it."
+        }
+      }
+    ]
+  }
+  </script>
+  <script defer src="https://umami.geeksy.media/script.js" data-website-id="1b1d8f90-a342-4103-ab1a-222cc25d5a8e" data-domains="signmyebook.com"></script>
+</head>
+<body>
+  <a class="skip-link" href="#tool">Skip to the tool</a>
+
+  <header class="site-header">
+    <a class="brand" href="/">SignMyEbook</a>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="#how">How it works</a>
+      <a href="#about">About</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+  </header>
+
+  <main id="top">
+
+    <div class="intro">
+      <h1>Sign an ebook like you'd sign a paperback.</h1>
+      <p>Add a page with your dedication and signature to any EPUB or FB2 file, right after the cover. Your browser does all the work, so the book never leaves your device.</p>
+    </div>
+
+    <section class="tool-shell" id="tool" aria-label="Sign an ebook">
+      <div class="tool">
+        <div class="tool-form">
+          <div class="step" id="step-file">
+            <h2 class="step-title"><span class="step-num">1.</span> Choose a book</h2>
+            <div class="dropzone" id="dropzone">
+              <input type="file" id="epub-input" accept=".epub,.fb2,.zip,application/epub+zip" hidden>
+              <div class="dropzone-empty">
+                <strong>Drop an EPUB or FB2 file here</strong>
+                <span>or click to choose one</span>
+              </div>
+              <div class="dropzone-filled" hidden>
+                <strong id="file-name"></strong>
+                <span id="file-size"></span>
+                <button type="button" class="link" id="file-clear">remove</button>
+              </div>
+            </div>
+            <div class="meta" id="meta" hidden>
+              <div class="meta-row"><span class="meta-label">Title</span><span id="meta-title"></span></div>
+              <div class="meta-row" id="meta-author-row"><span class="meta-label">Author</span><span id="meta-author"></span></div>
+            </div>
+            <div class="warning" id="already-signed" hidden>
+              This book has already been signed with SignMyEbook. The old signature page will be replaced.
+            </div>
+          </div>
+
+          <div class="step" id="step-text">
+            <h2 class="step-title"><label for="text-input"><span class="step-num">2.</span> Dedication</label> <span class="optional">optional</span></h2>
+            <textarea id="text-input" rows="4" placeholder="For Sam,&#10;who read the first draft."></textarea>
+          </div>
+
+          <div class="step" id="step-image">
+            <h2 class="step-title"><span class="step-num">3.</span> Signature <span class="optional">optional</span></h2>
+            <div class="tabs" role="tablist">
+              <button type="button" class="tab active" data-source="none" role="tab">None</button>
+              <button type="button" class="tab" data-source="draw" role="tab">Draw</button>
+              <button type="button" class="tab" data-source="file" role="tab">Upload an image</button>
+            </div>
+
+            <div class="tab-panel" data-panel="draw" hidden>
+              <div class="drawpad-wrap">
+                <canvas id="drawpad" width="800" height="400"></canvas>
+              </div>
+              <div class="drawpad-controls">
+                <label>
+                  Pen
+                  <input type="range" id="drawpad-thickness" min="1" max="12" value="3">
+                </label>
+                <button type="button" class="link" id="drawpad-undo">Undo</button>
+                <button type="button" class="link" id="drawpad-clear">Clear</button>
+              </div>
+            </div>
+
+            <div class="tab-panel" data-panel="file" hidden>
+              <div class="image-dropzone" id="image-dropzone">
+                <input type="file" id="image-input" accept="image/png,image/jpeg,image/webp" hidden>
+                <div class="image-dropzone-empty">
+                  <strong>Drop a PNG, JPG or WebP</strong>
+                  <span>a photo of a signature on white paper works well</span>
+                </div>
+                <div class="image-dropzone-filled" hidden>
+                  <img id="image-preview-img" alt="">
+                  <div class="image-dropzone-info">
+                    <strong id="image-name"></strong>
+                    <button type="button" class="link" id="image-clear">remove</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="step" id="step-date">
+            <h2 class="step-title"><label for="date-input"><span class="step-num">4.</span> Place and date</label> <span class="optional">optional</span></h2>
+            <input type="text" id="date-input" placeholder="Lisbon, May 2026" autocomplete="off">
+          </div>
+        </div>
+
+        <figure class="tool-preview">
+          <div class="preview-page">
+            <iframe id="preview-frame" title="Preview of the signature page" tabindex="-1"></iframe>
+          </div>
+          <figcaption id="preview-caption">An example. Start typing and this becomes your page.</figcaption>
+        </figure>
+
+        <div class="tool-actions">
+          <button type="button" class="primary" id="submit" disabled>Sign and download</button>
+          <p class="hint" id="hint">Choose a book, then add a dedication or a signature.</p>
+          <p class="error" id="error" hidden></p>
+          <p class="status" id="status" hidden></p>
+        </div>
+      </div>
+      <p class="pwa-footer">
+        <a href="https://signmyebook.com/" target="_blank" rel="noopener">signmyebook.com</a>
+      </p>
+    </section>
+
+    <section class="prose" id="how" aria-labelledby="how-title">
+      <h2 id="how-title">How it works</h2>
+      <ol class="how-list">
+        <li>Choose an EPUB or FB2 file. Your browser reads it; nothing is sent to a server.</li>
+        <li>Write a dedication. If you like, draw a signature with a mouse, finger or stylus, or upload a photo of one you signed on paper. A place and date are optional too.</li>
+        <li>Download the signed copy. The new page goes right after the cover, and the rest of the book stays exactly as it was. Your original file isn't touched.</li>
+      </ol>
+    </section>
+
+    <section class="prose" id="uses" aria-labelledby="uses-title">
+      <h2 id="uses-title">What people use it for</h2>
+      <ul class="uses-list">
+        <li><strong>Gifts from authors.</strong> A copy for a friend, a relative, or the colleague who kept asking how the book was going.</li>
+        <li><strong>A bonus for supporters.</strong> Signed copies with the reader's name for patrons on Patreon, Substack, Gumroad or Ko-fi.</li>
+        <li><strong>After an online event.</strong> At an in-person reading you'd sign books at a table afterwards. After a Zoom talk, a podcast or a book-club call, you can send each reader a signed file instead.</li>
+        <li><strong>Gifts from readers.</strong> You don't have to be the author. Giving an ebook to a friend or a child? Write them a note in the front, like you would in a hardcover.</li>
+      </ul>
+    </section>
+
+    <section class="prose" id="about" aria-labelledby="about-title">
+      <h2 id="about-title">Why I made this</h2>
+      <div class="about">
+        <img class="about-photo" src="https://fedorananin.me/favicon.jpg" alt="Fëdor Ananin" width="96" height="96" loading="lazy" decoding="async">
+        <div class="about-text">
+          <p>A while ago I met an author. We talked for a while, and before we said goodbye he signed a copy of his book for me: a short dedication, my name, his signature. I still take that paperback off the shelf now and then, and it still feels like someone was there.</p>
+          <p>Ebooks have nowhere to put that. Every copy is the same file, byte for byte. So I made a small tool that adds one page after the cover, where a dedication and a signature can live.</p>
+          <p>It's free, and I plan to keep it that way. It runs in your browser because a personal note to someone shouldn't have to pass through my server, or anyone else's.</p>
+          <p>The code is open source, so you don't have to take my word for any of this. It's <a href="https://github.com/fedorananin/signmyebook" rel="noopener" target="_blank">on GitHub</a>, and pull requests are welcome.</p>
+          <p class="about-sign">Fëdor Ananin · <a href="https://www.linkedin.com/in/fedorananin/" rel="me noopener" target="_blank">LinkedIn</a> · <a href="https://github.com/fedorananin" rel="me noopener" target="_blank">GitHub</a></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="prose" id="faq" aria-labelledby="faq-title">
+      <h2 id="faq-title">Questions</h2>
+      <div class="faq-list">
+        <details>
+          <summary>Is my book uploaded anywhere?</summary>
+          <p>No. The site is a set of static files. Your browser opens the book, adds the page and saves the new copy, all on your device. The site counts visits with <a href="https://umami.is/" rel="noopener" target="_blank">Umami</a>, a cookie-free analytics tool. It records events like "a book was signed" along with the file format, never the file or what you wrote. The <a href="https://github.com/fedorananin/signmyebook" rel="noopener" target="_blank">source code</a> is public if you'd like to check.</p>
+        </details>
+        <details>
+          <summary>Will the signed file open in Kindle, Apple Books and other readers?</summary>
+          <p>Yes. The result is a regular EPUB or FB2 with one extra page near the front. Apple Books, Calibre, KOReader, Moon+ Reader, FBReader and most other readers open it as usual. For Kindle, send the EPUB with Send to Kindle, or convert it to AZW3 in Calibre.</p>
+        </details>
+        <details>
+          <summary>Does it work with DRM-protected books?</summary>
+          <p>No. It can only edit EPUB and FB2 files without copy protection. Most books bought from Kindle, Kobo or Barnes &amp; Noble have DRM and won't open here, and that's intentional.</p>
+        </details>
+        <details>
+          <summary>Can I sign a book that was already signed?</summary>
+          <p>Yes. If the book already has a SignMyEbook page, the new signature replaces it. Your original file is never changed; every download is a new copy.</p>
+        </details>
+        <details>
+          <summary>Does it cost anything?</summary>
+          <p>No. There is no paid plan, no account and no watermark. Sign as many books as you like.</p>
+        </details>
+        <details>
+          <summary>Can I use it offline?</summary>
+          <p>Yes. Install it from your browser ("Add to Home Screen" or the install icon in the address bar) and it will work without an internet connection.</p>
+        </details>
+        <details>
+          <summary>Is there a file size limit?</summary>
+          <p>No fixed limit. Everything happens in your browser, so the only limit is your device's memory. Very large books can be slow on older phones.</p>
+        </details>
+        <details>
+          <summary>Which languages can I write in?</summary>
+          <p>Any language your keyboard supports, including Russian, Chinese, Arabic and Hebrew, and mixed scripts. The text is stored exactly as you typed it.</p>
+        </details>
+      </div>
+      <p class="back-to-tool"><a href="#tool">Sign an ebook</a></p>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p>SignMyEbook, made by Fëdor Ananin. © <span id="footer-year"></span></p>
+      <nav class="footer-nav" aria-label="Footer">
+        <a href="#tool">The tool</a>
+        <a href="#how">How it works</a>
+        <a href="#about">About</a>
+        <a href="#faq">FAQ</a>
+        <a href="https://github.com/fedorananin/signmyebook" rel="noopener" target="_blank">Source code</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="vendor/jszip.min.js"></script>
+  <script type="module" src="app.js?v=9"></script>
+  <script src="js/landing.js?v=9" defer></script>
+</body>
+</html>

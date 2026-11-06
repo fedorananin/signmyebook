@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SignMyEbook · OG</title>
+  <meta name="robots" content="noindex">
+  <!--
+    Source for og.jpg (1200×630). Render with a headless browser at 1200×630
+    and save as JPEG. The page on the right copies the styles of the real
+    signature page from js/signature-page.js.
+  -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,300..700;1,7..72,300..700&display=swap" rel="stylesheet">
+
+  <style>
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+
+    body {
+      width: 1200px;
+      height: 630px;
+      overflow: hidden;
+      background: #fcfcfa;
+      color: #1b1b1b;
+      font-family: "Literata", Georgia, serif;
+      display: grid;
+      grid-template-columns: 1fr 340px;
+      align-items: center;
+      gap: 72px;
+      padding: 0 80px;
+    }
+
+    .brand {
+      margin: 0 0 28px;
+      font-size: 26px;
+      font-weight: 600;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 72px;
+      line-height: 1.12;
+      font-weight: 500;
+    }
+
+    .sub {
+      margin: 28px 0 0;
+      font-size: 26px;
+      line-height: 1.45;
+      color: #3a3a3a;
+    }
+
+    .page {
+      width: 340px;
+      height: 453px;
+      background: #fff;
+      border: 1.5px solid #cbc8c1;
+      border-radius: 4px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 32px 24px;
+      font-family: Georgia, "Times New Roman", serif;
+      color: #1e3a8a;
+    }
+
+    .page p { margin: 0 0 14px; font-size: 21px; line-height: 1.5; }
+    .page p.gap { margin-bottom: 40px; }
+    .page .date {
+      margin: 26px 0 0;
+      font-size: 17px;
+      font-style: italic;
+      opacity: 0.8;
+    }
+  </style>
+</head>
+<body>
+
+  <div>
+    <p class="brand">SignMyEbook</p>
+    <h1>Sign an ebook like you'd sign a paperback.</h1>
+    <p class="sub">A page with your dedication and signature, added to any EPUB or FB2. In your browser, free.</p>
+  </div>
+
+  <div class="page">
+    <p class="gap">For Sam,<br>who read the first draft<br>and asked for more.</p>
+    <p>With thanks,<br>Alex</p>
+    <p class="date">Lisbon, November 2026</p>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,19 @@
+# =============================================================
+# SignMyEbook — server config
+# =============================================================
+
+# Deny direct access to Markdown files (READMEs, notes, etc.)
+<FilesMatch "\.md$">
+  Require all denied
+</FilesMatch>
+
+# Force HTTPS + canonical host (signmyebook.com)
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # Skip redirect for local development (*.local hosts)
+  RewriteCond %{HTTP_HOST} !\.local$ [NC]
+  RewriteCond %{HTTPS} off [OR]
+  RewriteCond %{HTTP_HOST} !^signmyebook\.com$ [NC]
+  RewriteRule ^(.*)$ https://signmyebook.com/$1 [L,R=301]
+</IfModule>

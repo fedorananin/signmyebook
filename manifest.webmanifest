@@ -1,0 +1,19 @@
+{
+  "name": "SignMyEbook",
+  "short_name": "SignMyEbook",
+  "description": "Add a signature page to an EPUB or FB2, right in your browser",
+  "lang": "en",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#fcfcfa",
+  "theme_color": "#fcfcfa",
+  "icons": [
+    {
+      "src": "icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
